@@ -14,7 +14,7 @@ public:
     SmartStepper(int stepsPerRev, int in1, int in3, int in2, int in4) 
         : _stepper(stepsPerRev, in1, in2, in3, in4) { // Note sequence 1-3-2-4 for Stepper lib with ULN2003
         _state = "CLOSED";
-        _stepsForFullOpen = stepsPerRev / 4; // 90 degrees approx (adjust as needed)
+        _stepsForFullOpen = stepsPerRev * 2; // 2 Full revolutions
         _speed = 10;
         _stepper.setSpeed(_speed);
     }
